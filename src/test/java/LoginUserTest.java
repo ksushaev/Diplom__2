@@ -13,14 +13,14 @@ import static java.net.HttpURLConnection.HTTP_UNAUTHORIZED;
 public class LoginUserTest {
     private ChecksForUser checksForUser = new ChecksForUser();
     CreateUser newUser = CreateUser.getUserWithRandomStringUtils();
-    private final DataForLoginUser dataForLoginUser = new DataForLoginUser().from(newUser);
-    private String accessToken = "";
+    private final DataForLoginUser dataForLoginUser = DataForLoginUser.from(newUser);
 
 
     @Before
     public void setUp() {
         checksForUser = new ChecksForUser();
     }
+    private String accessToken = "";
 
     @Test
     @DisplayName("Логин под существующим пользователем")
