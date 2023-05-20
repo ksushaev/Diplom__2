@@ -16,12 +16,13 @@ public class GetOrdersTest {
     private ChecksForOrders checks = new ChecksForOrders();
     CreateUser newUser = CreateUser.getUserWithRandomStringUtils();
     private final DataForLoginUser dataForLoginUser = DataForLoginUser.from(newUser);
+    private String accessToken;
 
     @Before
     public void setUp() {
         checksForUser = new ChecksForUser();
+        accessToken = "";
     }
-    private String accessToken = "";
 
     @Test
     @DisplayName("Заказы авторизованного пользователя")

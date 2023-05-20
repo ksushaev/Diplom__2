@@ -22,6 +22,7 @@ public class MakeOrderTest {
     CreateUser newUser = CreateUser.getUserWithRandomStringUtils();
     private final DataForLoginUser dataForLoginUser = DataForLoginUser.from(newUser);
     private int statusCode;
+    private String accessToken;
 
 
     public MakeOrderTest(OrderWithIngredients orderWithIngredients, int statusCode) {
@@ -32,8 +33,8 @@ public class MakeOrderTest {
     @Before
     public void setUp() {
         checksForUser = new ChecksForUser();
+        accessToken = "";
     }
-    private String accessToken = "";
 
     @Parameterized.Parameters
     public static Object[][] getDataForOrder() {

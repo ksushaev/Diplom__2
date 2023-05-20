@@ -17,12 +17,13 @@ public class ChangeUserTest {
     private ChecksForUser checksForUser = new ChecksForUser();
     CreateUser newUser = CreateUser.getUserWithRandomStringUtils();
     private final DataForLoginUser dataForLoginUser = DataForLoginUser.from(newUser);
+    private String accessToken;
 
     @Before
     public void setUp() {
         checksForUser = new ChecksForUser();
+        accessToken = "";
     }
-    private String accessToken = "";
 
     @Test
     @DisplayName("Изменить пароль, логин и имя пользователя c авторизацией")
